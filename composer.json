@@ -1,0 +1,36 @@
+{
+    "name": "ikepu-tp/laravel-to-react",
+    "description": "",
+    "type": "library",
+    "keywords": [
+        "laravel"
+    ],
+    "homepage": "https://rainbow-patissier.com",
+    "support": {
+        "issues": "https://github.com/ikepu-tp/laravel-to-react/issues",
+        "source": "https://github.com/ikepu-tp/laravel-to-react"
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.8"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ikepu_tp\\ToReact\\": "./src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yuma Ikeda",
+            "email": "programing@rainbow-patissier.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ikepu_tp\\ToReact\\ToReactServiceProvider"
+            ]
+        }
+    }
+}
