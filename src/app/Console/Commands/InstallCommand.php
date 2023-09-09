@@ -26,7 +26,7 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        foreach ([".prettierignore", ".prettierrc", "tsconfig.json", "tsconfig.node.json"] as $val) {
+        foreach ([".prettierignore", ".prettierrc", "tsconfig.json", "tsconfig.node.json", "jest.config.json"] as $val) {
             $this->copyFile(self::basePath() . "/root/{$val}", base_path($val));
         }
         (new Filesystem)->copyDirectory(self::basePath() . "resources/react", resource_path("react"));
@@ -50,9 +50,12 @@ class InstallCommand extends Command
                 "@types/node" => "^16.18.46",
                 "@types/react" => "^18.2.21",
                 "@types/react-dom" => "^18.2.7",
+                "jest" => "^29.6.4",
+                "jest-environment-jsdom" => "^29.6.4",
                 "react" => "^18.2.0",
                 "react-dom" => "^18.2.0",
                 "react-scripts" => "5.0.1",
+                "ts-jest" => "^29.1.1",
                 "typescript" => "^4.9.5",
                 "web-vitals" => "^2.1.4"
             ]);
