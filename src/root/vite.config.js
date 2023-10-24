@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import laravel, { refreshPaths } from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
@@ -11,7 +11,11 @@ export default defineConfig({
 
                 'resources/react/index.tsx'
             ],
-            refresh: true,
+            refresh: [
+                ...refreshPaths,
+                'app/Http/Livewire/**',
+                'resources/react/components/**',
+            ],
         }),
         react(),
     ],
@@ -21,4 +25,12 @@ export default defineConfig({
             host: 'localhost',
         },
     },
+    resolve: {
+        alias: {
+            '~': '/resources/react',
+        },
+    },
+    build: {
+        manifest: true,
+    }
 });
