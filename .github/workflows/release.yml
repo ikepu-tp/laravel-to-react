@@ -1,0 +1,35 @@
+name: versioning
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - version.json
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: set version
+        run: node -p -e 'const version=require("./version.json");`RELEASED_VERSION=v${version["version"]}`' >> $GITHUB_ENV
+
+      - name: create release
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d "{ \"tag_name\": \"${{ env.RELEASED_VERSION }}\", \"name\": \"${{ env.RELEASED_VERSION }}\", \"generate_release_notes\": true }" \
+            https://api.github.com/repos/${GITHUB_REPOSITORY}/releases
