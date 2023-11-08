@@ -12,6 +12,6 @@ Thank you for your contributions. If you find bugs, let me know them with issues
 
 ## License
 
-Copyright (c) 2023 Yuma Ikeda.
+Copyright (c) 2023 ikepu-tp.
 
 This is open-sourced software licensed under the [MIT license](LICENSE).

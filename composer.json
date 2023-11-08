@@ -5,7 +5,7 @@
     "keywords": [
         "laravel"
     ],
-    "homepage": "https://rainbow-patissier.com",
+    "homepage": "https://ikepu-tp.com",
     "support": {
         "issues": "https://github.com/ikepu-tp/laravel-to-react/issues",
         "source": "https://github.com/ikepu-tp/laravel-to-react"
@@ -22,8 +22,8 @@
     },
     "authors": [
         {
-            "name": "Yuma Ikeda",
-            "email": "programing@rainbow-patissier.com"
+            "name": "ikepu-tp",
+            "email": "program@ikepu-tp.com"
         }
     ],
     "extra": {
